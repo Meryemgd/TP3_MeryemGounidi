@@ -13,6 +13,17 @@ public class GuideTouristiqueResource {
     @Path("lieu/{ville_ou_pays}")
     @Produces(MediaType.APPLICATION_JSON)
     public String[] getLieux(@PathParam("ville_ou_pays") String lieu) {
-        return new String[]{lieu};
+        switch (lieu.toLowerCase()) {
+            case "paris":
+                return new String[]{"Tour Eiffel", "Musée du Louvre"};
+            case "maroc":
+                return new String[]{"Mosquée Hassan II", "Médina de Fès"};
+            case "londres":
+                return new String[]{"Big Ben", "Tower Bridge"};
+            case "rome":
+                return new String[]{"Colisée", "Vatican"};
+            default:
+                return new String[]{"Aucun lieu touristique trouvé pour " + lieu};
+        }
     }
 }
