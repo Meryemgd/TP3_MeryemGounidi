@@ -1,0 +1,8 @@
+package ma.emsi.gounidimeryem.tp3_gounidimeryem;
+
+import jakarta.ws.rs.ApplicationPath;
+import jakarta.ws.rs.core.Application;
+
+@ApplicationPath("/api")
+public class TourismeApplication extends Application {
+}
